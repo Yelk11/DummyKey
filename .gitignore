@@ -3,3 +3,5 @@ build/
 dist/
 __pychache__/
 
+*.spec
+*.pyc
