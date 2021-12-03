@@ -15,8 +15,8 @@ print('''
 
 #email dump
 
-emailAddr = "darknightwing98@gmail.com"
-password = "IronMan$$$"
+emailAddr = "phoneyemail@gmail.com" #change to bogus email
+password = "Password"           #password for email
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(emailAddr, password)
 
