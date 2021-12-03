@@ -1,4 +1,4 @@
-import getpass, smtplib, ssl
+import smtplib
 from pynput.keyboard import Key, Listener
 #list of imports 
 
